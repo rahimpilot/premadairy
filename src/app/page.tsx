@@ -79,7 +79,7 @@ export default function Home() {
 
           <div className="relative h-64 w-full mb-8 border-4 double border-[var(--border-strong)] shadow-lg rotate-1 hover:rotate-0 transition-transform duration-500">
             <Image
-              src="/milk-cans.png"
+              src="/milk-cans.svg"
               alt="Traditional Milk Cans"
               fill
               className="object-cover sepia-[0.3]"
@@ -152,7 +152,7 @@ export default function Home() {
           {/* Image Side */}
           <div className="relative h-[300px] w-full border-4 double border-[var(--royal)] shadow-xl -rotate-2 hover:rotate-0 transition-transform duration-500">
             <Image
-              src="/delivery.png"
+              src="/delivery.svg"
               alt="Milk Delivery Cycle"
               fill
               className="object-cover sepia-[0.2]"
