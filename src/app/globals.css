@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #f4efe9;
-  --paper: #f9f6f1;
-  --parchment: #e8e1d5;
-  --ink: #2c241b;
-  --brick: #8f3428;
+  --cream: #fffdf5;
+  /* Warmer, like boiled milk */
+  --paper: #fcf8f0;
+  --parchment: #f0e6d2;
+  --ink: #1a1510;
+  --brick: #c24d2c;
+  /* Terracotta / Saffron-Red */
+  --royal: #1e3a8a;
+  /* Shop Signage Royal Blue */
+  --saffron: #e6a337;
+  /* Turmeric/Gold */
   --sage: #5e6b50;
-  --olive: #4a5d3f;
-  --butter: #e8c68a;
   --cocoa: #5c4033;
   --charcoal: #363636;
   --border: #d4c5b3;
@@ -23,6 +27,7 @@
   /* Map Tailwind utilities to Next.js font variables */
   --font-sans: var(--font-cormorant), "Georgia", serif;
   --font-serif: var(--font-im-fell), "Times New Roman", serif;
+  --font-script: var(--font-script), "Brush Script MT", cursive;
   --font-mono: "Courier New", monospace;
 
   --spacing-container: 1200px;
@@ -45,6 +50,19 @@ body {
 /* Utilities */
 .vintage-bg {
   background-color: var(--paper);
+}
+
+.kerala-border {
+  border: 4px double var(--royal);
+  position: relative;
+}
+
+.kerala-border::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--saffron);
+  pointer-events: none;
 }
 
 .vintage-panel {
@@ -90,7 +108,7 @@ body {
   padding: 0.75rem 2rem;
   font-family: var(--font-serif);
   font-size: 1.1rem;
-  color: var(--paper);
+  color: var(--cream);
   background: var(--brick);
   border: 2px solid var(--brick);
   transition: all 0.2s ease;

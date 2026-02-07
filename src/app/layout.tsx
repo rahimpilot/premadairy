@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cormorant_Garamond, IM_Fell_English } from "next/font/google";
+import { Cormorant_Garamond, IM_Fell_English, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -18,9 +18,16 @@ const imFell = IM_Fell_English({
   display: "swap",
 });
 
+const pinyon = Pinyon_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-script",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Prema Dairy | Vintage Farmhouse Goodness",
-  description: "Fresh milk, butter, and curd from MK Road, Kannur. Est. 2024.",
+  description: "Fresh milk, butter, and curd from Bellard Road, Kannur. Est. 2014.",
 };
 
 export default function RootLayout({
@@ -29,55 +36,40 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${imFell.variable}`}>
-      <body className="bg-[var(--paper)] text-[var(--ink)] antialiased min-h-screen flex flex-col items-center py-4 px-4 sm:px-8">
+    <html lang="en" className={`${cormorant.variable} ${imFell.variable} ${pinyon.variable}`}>
+      <body className="bg-[var(--border)] text-[var(--ink)] antialiased min-h-screen p-2 sm:p-4 md:p-6 flex flex-col justify-center">
 
         {/* Main Vintage Paper Container */}
-        <div className="w-full max-w-[var(--spacing-container)] bg-[var(--paper)] min-h-[95vh] relative shadow-2xl border border-[var(--border)] flex flex-col">
-
-          {/* Inner Border Decoration */}
-          <div className="absolute inset-2 border-2 border-double border-[var(--border-strong)] pointer-events-none z-10 hidden sm:block"></div>
-          <div className="absolute inset-[10px] border border-[var(--border)] pointer-events-none z-10 hidden sm:block"></div>
+        <div className="bg-[var(--paper)] w-full max-w-[var(--spacing-container)] mx-auto min-h-[90vh] relative shadow-2xl kerala-border flex flex-col">
 
           {/* Header */}
-          <header className="relative z-20 pt-16 pb-8 px-6 text-center">
-            <div className="flex flex-col items-center justify-center gap-4">
-              <div className="flex items-center gap-4 text-[var(--brick)] opacity-80">
-                <span className="h-px w-12 bg-current"></span>
-                <span className="vintage-badge text-xs tracking-[0.3em]">Est. 2024</span>
-                <span className="h-px w-12 bg-current"></span>
-              </div>
-
-              <h1 className="text-5xl md:text-7xl font-serif text-[var(--ink)] tracking-tight">
+          <header className="px-8 py-6 md:py-8 border-b border-[var(--border)] grid md:grid-cols-2 items-center gap-6">
+            <div className="flex flex-col items-start gap-1">
+              <h1 className="text-4xl md:text-5xl font-script text-[var(--royal)]">
                 Prema Dairy
               </h1>
-
-              <p className="text-[var(--sage)] italic font-serif text-xl opacity-90">
-                Farmhouse Quality &bull; Kannur
-              </p>
+              <span className="border border-[var(--royal)] px-2 py-px text-[10px] tracking-[0.2em] font-mono uppercase opacity-70 text-[var(--royal)]">Est. 2014</span>
             </div>
 
             {/* Navigation */}
-            <nav className="mt-10 flex flex-wrap justify-center gap-6 md:gap-12 border-y border-[var(--border)] py-4 max-w-2xl mx-auto">
-              <Link href="/" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Home</Link>
-              <Link href="/products" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Provisions</Link>
-              <Link href="/contact" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Enquire</Link>
+            <nav className="flex flex-wrap justify-end gap-6 md:gap-8">
+              <Link href="/products" className="uppercase tracking-[0.15em] text-[11px] font-mono text-[var(--border-strong)] hover:text-[var(--royal)] transition-colors font-semibold">Provisions</Link>
+              <Link href="/about" className="uppercase tracking-[0.15em] text-[11px] font-mono text-[var(--border-strong)] hover:text-[var(--royal)] transition-colors font-semibold">Our Story</Link>
+              <Link href="/contact" className="uppercase tracking-[0.15em] text-[11px] font-mono text-[var(--border-strong)] hover:text-[var(--royal)] transition-colors font-semibold">Neighbors</Link>
+              <Link href="/contact" className="uppercase tracking-[0.15em] text-[11px] font-mono text-[var(--border-strong)] hover:text-[var(--royal)] transition-colors font-semibold">Enquire</Link>
             </nav>
           </header>
 
           {/* Main Content */}
-          <main className="flex-grow z-20 px-6 md:px-12 py-8 relative">
+          <main className="flex-grow">
             {children}
           </main>
 
           {/* Footer */}
-          <footer className="relative z-20 py-12 px-6 text-center border-t border-[var(--border)] mt-auto bg-[var(--cream)]/30">
-            <div className="ornament-flourish mb-6">~ &diams; ~</div>
-            <p className="uppercase tracking-widest text-xs font-bold text-[var(--brick)] mb-2">MK Road, Padanapalam</p>
-            <p className="font-serif italic text-[var(--cocoa)] text-lg">Kannur, Kerala 670001</p>
-
-            <div className="mt-8 text-xs text-[var(--border-strong)] uppercase tracking-wider opacity-70">
-              &copy; 2024 Prema Dairy. Crafted with care.
+          <footer className="py-8 px-6 text-center border-t border-[var(--border)] mt-auto bg-[var(--cream)]/30">
+            <p className="font-serif italic text-[var(--border-strong)] text-sm mb-2">2, Bellard Road, Kannur, Kerala 670001</p>
+            <div className="text-[10px] text-[var(--border-strong)] uppercase tracking-widest opacity-60">
+              &copy; 2024 Prema Dairy.
             </div>
           </footer>
 

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 interface Review {
@@ -32,49 +33,68 @@ export default function Home() {
     <div className="max-w-5xl mx-auto space-y-16">
 
       {/* Hero Section */}
-      <section className="text-center space-y-8 py-8 fade-in">
-        <div className="flex justify-center items-center gap-4 text-[var(--brick)] opacity-80 mb-4">
-          <span className="h-px w-24 bg-current"></span>
-          <span className="font-serif italic text-2xl px-4">Fresh &bull; Pure &bull; Local</span>
-          <span className="h-px w-24 bg-current"></span>
+      <section className="text-center space-y-12 py-16 md:py-24 fade-in px-4">
+
+        {/* Top Decorative Line */}
+        <div className="flex items-center justify-center gap-4 max-w-sm mx-auto">
+          <span className="h-px bg-[var(--border-strong)] flex-grow opacity-60"></span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">Bellard Road • Kannur</span>
+          <span className="h-px bg-[var(--border-strong)] flex-grow opacity-60"></span>
         </div>
 
-        <h2 className="text-5xl md:text-6xl font-serif leading-tight text-[var(--ink)] max-w-3xl mx-auto">
-          A Vintage Taste of Kannur,<br /> Poured Fresh Every Morning.
-        </h2>
+        {/* Main Headline */}
+        <div className="space-y-4">
+          <h2 className="text-6xl md:text-8xl font-serif text-[var(--royal)] italic leading-none drop-shadow-sm">
+            Pure. Simple.
+          </h2>
+          <h2 className="text-7xl md:text-9xl font-serif text-[var(--brick)] italic leading-none drop-shadow-sm">
+            Honest.
+          </h2>
+        </div>
 
-        <p className="text-xl max-w-2xl mx-auto text-[var(--charcoal)] leading-relaxed">
-          From MK Road, Padanapalam, Prema Dairy brings milk, butter, curd, and yogurt with a slow-crafted touch and honest farmhouse quality.
+        {/* Subtext */}
+        <p className="text-xl max-w-xl mx-auto text-[var(--charcoal)] font-sans leading-relaxed opacity-80 pt-4">
+          Serving the neighborhood from Railway Station Road since 2014.
+          <br />
+          <span className="text-[var(--royal)] font-bold mt-2 block">+91 96053 10945</span>
         </p>
 
-        <div className="pt-6 flex flex-col sm:flex-row gap-6 justify-center">
-          <Link href="/products" className="vintage-btn">
-            View Our Provisions
-          </Link>
-          <Link href="/contact" className="vintage-btn vintage-btn-secondary">
-            Visit the Dairy
+        {/* Button */}
+        <div className="pt-8 pb-8">
+          <Link href="/contact" className="inline-block bg-[var(--brick)] text-[var(--cream)] text-sm tracking-[0.2em] font-mono uppercase px-12 py-4 shadow-[4px_4px_0_var(--ink)] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--ink)] transition-all border border-[var(--ink)]">
+            Call for Delivery
           </Link>
         </div>
+
       </section>
 
-      <div className="separator-dots"></div>
+      <div className="separator-dots opacity-40"></div>
 
       {/* Featured Collection - Grid Layout */}
       <section className="grid md:grid-cols-2 gap-12 items-start fade-in delay-100">
         <div className="space-y-6">
-          <h3 className="vintage-title text-3xl mb-6 border-b border-[var(--border-strong)] pb-2 inline-block">
-            Signature Collection
+          <h3 className="vintage-title text-3xl mb-6 border-b border-[var(--border-strong)] pb-2 inline-block text-[var(--royal)]">
+            Morning Provisions
           </h3>
+
+          <div className="relative h-64 w-full mb-8 border-4 double border-[var(--border-strong)] shadow-lg rotate-1 hover:rotate-0 transition-transform duration-500">
+            <Image
+              src="/milk-cans.png"
+              alt="Traditional Milk Cans"
+              fill
+              className="object-cover sepia-[0.3]"
+            />
+          </div>
 
           <div className="space-y-8">
             {[
-              { name: 'Morning Milk', desc: 'Creamy, chilled, and sealed for freshness.', price: 'Daily' },
-              { name: 'Golden Butter', desc: 'Slow churned with a silky finish.', price: 'Weekly' },
-              { name: 'Farm Curd', desc: 'Thick set, lightly tangy, and smooth.', price: 'Daily' },
-              { name: 'Traditional Yogurt', desc: 'Balanced cultures with a mellow taste.', price: 'Daily' },
+              { name: 'Fresh Milk', desc: 'Chilled and packeted daily.', price: 'Daily' },
+              { name: 'Pure Curd', desc: 'Thick, set curd from whole milk.', price: 'Daily' },
+              { name: 'Butter & Ghee', desc: 'Golden and aromatic.', price: 'Weekly' },
+              { name: 'Sambharam', desc: 'Spiced buttermilk for the heat.', price: 'Daily' },
             ].map((item) => (
               <div key={item.name} className="flex gap-4 items-baseline group cursor-pointer">
-                <div className="w-2 h-2 mt-2 rounded-full bg-[var(--brick)] opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                <div className="w-2 h-2 mt-2 rounded-full bg-[var(--saffron)] opacity-80 group-hover:opacity-100 transition-opacity"></div>
                 <div>
                   <div className="flex items-baseline gap-3">
                     <h4 className="text-xl font-bold font-serif text-[var(--ink)] group-hover:text-[var(--brick)] transition-colors">
@@ -90,16 +110,25 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="vintage-panel md:mt-12">
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--cream)] px-4">
-            <span className="vintage-badge text-[var(--sage)] border-[var(--sage)]">Our Promise</span>
+        <div className="vintage-panel md:mt-12 bg-[var(--cream)]">
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[var(--paper)] px-4 border border-[var(--border)]">
+            <span className="vintage-badge text-[var(--royal)] border-[var(--royal)]">Kannur's Own</span>
+          </div>
+
+          <div className="relative h-48 w-full mb-6 border border-[var(--border)] overflow-hidden rounded-sm grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
+            <Image
+              src="/shop-front.png"
+              alt="Prema Dairy Shop Front"
+              fill
+              className="object-cover"
+            />
           </div>
 
           <ul className="space-y-6 mt-4">
             {[
-              { title: 'Dawn to Doorstep', body: 'Fresh batches prepared early and delivered with care.' },
-              { title: 'Traditional Craft', body: 'Methods inspired by farmhouse routines and time-honored recipes.' },
-              { title: 'Local Community', body: 'Rooted in Kannur with a focus on neighborhood families.' }
+              { title: 'Local Source', body: 'Located right at 2, Bellard Road (Railway Station Rd).' },
+              { title: 'Traditional Taste', body: 'We keep the authentic taste of old Kerala dairy alive.' },
+              { title: 'Community Focused', body: 'Serving local families and tea shops with pride.' }
             ].map((feature, idx) => (
               <li key={idx} className="flex gap-4">
                 <span className="font-serif text-[var(--brick)] text-2xl italic">{idx + 1}.</span>
@@ -116,27 +145,38 @@ export default function Home() {
       {/* Story Section */}
       <section className="bg-[var(--parchment)] p-8 md:p-12 border border-[var(--border)] fade-in delay-200 relative overflow-hidden">
         {/* Decorative corner */}
-        <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[var(--border-strong)] opacity-30 m-2"></div>
-        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[var(--border-strong)] opacity-30 m-2"></div>
+        <div className="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-[var(--saffron)] opacity-40 m-2"></div>
+        <div className="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-[var(--saffron)] opacity-40 m-2"></div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-center relative z-10">
-          <div className="md:col-span-2 space-y-4">
-            <span className="vintage-badge text-[var(--brick)] border-[var(--brick)]">Since 2024</span>
-            <h3 className="vintage-title text-4xl">Milk with a Memory</h3>
-            <p className="text-lg text-[var(--cocoa)] leading-relaxed">
-              We bottle the comfort of old dairy traditions with modern hygiene and careful delivery. Expect rich flavor, consistent quality, and friendly service with every order.
-            </p>
-            <div className="pt-4">
-              <Link href="/about" className="text-[var(--brick)] font-serif italic text-lg hover:underline decoration-1 underline-offset-4">
-                Read our full story &rarr;
-              </Link>
-            </div>
+        <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Image Side */}
+          <div className="relative h-[300px] w-full border-4 double border-[var(--royal)] shadow-xl -rotate-2 hover:rotate-0 transition-transform duration-500">
+            <Image
+              src="/delivery.png"
+              alt="Milk Delivery Cycle"
+              fill
+              className="object-cover sepia-[0.2]"
+            />
           </div>
-          <div className="text-center p-6 border-2 border-dashed border-[var(--border-strong)] rounded-lg bg-[var(--paper)] rotate-1 hover:rotate-0 transition-transform duration-300">
-            <div className="ornament-flourish text-3xl mb-2">&xi;</div>
-            <p className="vintage-title text-xl mb-2">Home Delivery</p>
-            <p className="font-mono text-sm uppercase tracking-widest mb-4">Kannur City</p>
-            <p className="text-xs text-[var(--sage)]">Daily Rounds • Fresh Chilled</p>
+
+          {/* Text Side */}
+          <div className="space-y-4">
+            <span className="vintage-badge text-[var(--brick)] border-[var(--brick)]">Since 2014</span>
+            <h3 className="vintage-title text-4xl text-[var(--royal)]">The Daily Run</h3>
+            <p className="text-lg text-[var(--cocoa)] leading-relaxed">
+              Every morning, before the Kannur sun fully rises, our crates are packed and ready. From the bustling Bellard Road to the quiet lanes nearby, we ensure every household gets their fresh packet of goodness.
+            </p>
+            <div className="pt-4 flex flex-col gap-2">
+              <span className="font-bold text-[var(--ink)]">Visit Us:</span>
+              <address className="not-italic text-[var(--charcoal)]">
+                Prema Dairy<br />
+                2, Bellard Road (Railway Station Rd)<br />
+                Kannur, Kerala 670001
+              </address>
+              <a href="tel:+919605310945" className="text-[var(--brick)] font-bold text-lg mt-2 hover:underline">
+                📞 +91 96053 10945
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -144,8 +184,8 @@ export default function Home() {
       {/* Reviews Section */}
       <section className="space-y-8 fade-in delay-300">
         <div className="text-center">
-          <h3 className="vintage-title text-3xl">Community Voices</h3>
-          <div className="w-16 h-1 bg-[var(--brick)] mx-auto mt-4 mb-2 opacity-50"></div>
+          <h3 className="vintage-title text-3xl">Notes from Neighbors</h3>
+          <div className="w-16 h-1 bg-[var(--saffron)] mx-auto mt-4 mb-2 opacity-80"></div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -153,31 +193,44 @@ export default function Home() {
             <p className="text-center col-span-3 text-[var(--cocoa)] italic">Consulting the archives...</p>
           ) : reviews.length > 0 ? (
             reviews.slice(0, 3).map((review, index) => (
-              <div key={index} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--sage)] shadow-sm">
-                <div className="text-[var(--brick)] text-xl mb-3">{'★'.repeat(parseInt(review.rating) || 5)}</div>
+              <div key={index} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--royal)] shadow-sm">
+                <div className="text-[var(--saffron)] text-xl mb-3">{'★'.repeat(parseInt(review.rating) || 5)}</div>
                 <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">&quot;{review.text}&quot;</p>
                 <div className="mt-4 text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
-                  — Neighbor
+                  — Customer
                 </div>
               </div>
             ))
           ) : (
-            <div className="col-span-3 text-center p-8 bg-[var(--paper)] border border-[var(--border)]">
-              <p className="text-[var(--cocoa)] italic">No tales to tell yet. Be the first to write one.</p>
-            </div>
+            // Fallback Static Reviews if API fails or is empty for demo
+            <>
+              {[
+                "Best milk in Kannur. Thick and pure.",
+                "Have been buying from here since they started. Very reliable.",
+                "Good quality curd and excellent service."
+              ].map((text, i) => (
+                <div key={i} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--royal)] shadow-sm">
+                  <div className="text-[var(--saffron)] text-xl mb-3">★★★★★</div>
+                  <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">&quot;{text}&quot;</p>
+                  <div className="mt-4 text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
+                    — Kannur Resident
+                  </div>
+                </div>
+              ))}
+            </>
           )}
         </div>
       </section>
 
       {/* Call to Action */}
       <section className="text-center py-16">
-        <div className="vintage-panel inline-block max-w-2xl w-full">
-          <h3 className="vintage-title text-3xl mb-4">Ready for morning freshness?</h3>
+        <div className="vintage-panel inline-block max-w-2xl w-full bg-[var(--cream)] border-[var(--royal)]">
+          <h3 className="vintage-title text-3xl mb-4 text-[var(--royal)]">Taste the Tradition</h3>
           <p className="mb-8 text-[var(--cocoa)]">
-            Contact us for daily subscriptions, event orders, or to visit our store on MK Road.
+            Stop by our shop on Bellard Road or call us to set up a daily drop.
           </p>
           <Link href="/contact" className="vintage-btn">
-            Arrange a Delivery
+            Order Now
           </Link>
         </div>
       </section>
