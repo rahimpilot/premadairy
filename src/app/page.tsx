@@ -155,7 +155,7 @@ export default function Home() {
             reviews.slice(0, 3).map((review, index) => (
               <div key={index} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--sage)] shadow-sm">
                 <div className="text-[var(--brick)] text-xl mb-3">{'★'.repeat(parseInt(review.rating) || 5)}</div>
-                <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">"{review.text}"</p>
+                <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">&quot;{review.text}&quot;</p>
                 <div className="mt-4 text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
                   — Neighbor
                 </div>

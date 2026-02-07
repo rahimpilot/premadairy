@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Cormorant_Garamond, IM_Fell_English } from "next/font/google";
 import "./globals.css";
 
@@ -58,9 +59,9 @@ export default function RootLayout({
 
             {/* Navigation */}
             <nav className="mt-10 flex flex-wrap justify-center gap-6 md:gap-12 border-y border-[var(--border)] py-4 max-w-2xl mx-auto">
-              <a href="/" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Home</a>
-              <a href="/products" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Provisions</a>
-              <a href="/contact" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Enquire</a>
+              <Link href="/" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Home</Link>
+              <Link href="/products" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Provisions</Link>
+              <Link href="/contact" className="uppercase tracking-[0.2em] text-xs md:text-sm text-[var(--ink)] hover:text-[var(--brick)] transition-colors font-semibold px-2">Enquire</Link>
             </nav>
           </header>
 
