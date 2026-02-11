@@ -159,7 +159,7 @@ export default function Home() {
           {/* Header */}
           <div className="text-center mb-12 relative z-10">
             <div className="inline-block">
-              <span className="vintage-badge text-[var(--saffron)] border-[var(--saffron)] text-xs mb-4">Heritage & Tradition</span>
+              <span className="vintage-badge text-[var(--saffron)] border-[var(--saffron)] text-xs mb-4">പൈതൃകവും പാരമ്പര്യവും</span>
               <h3 className="vintage-title text-4xl md:text-5xl text-[var(--royal)] mt-4 mb-3">
                 കണ്ണൂരിന്റെ പാൽ പാരമ്പര്യം
               </h3>
@@ -188,14 +188,14 @@ export default function Home() {
               {/* Traditional Uses */}
               <div className="bg-[var(--paper)] p-6 border border-[var(--border)] shadow-sm">
                 <h5 className="text-lg font-bold text-[var(--brick)] mb-4 flex items-center gap-2">
-                  <span className="text-2xl">🥛</span> Traditional Kannur Delicacies
+                  <span className="text-2xl">🥛</span> കണ്ണൂരിലെ പരമ്പരാഗത രുചികൾ
                 </h5>
                 <ul className="space-y-3">
                   {[
-                    { name: 'Paal Payasam', desc: 'Festival sweetness in every spoonful' },
-                    { name: 'Curd Rice', desc: 'The comfort meal of Kerala homes' },
-                    { name: 'Malabar Parotta & Kurma', desc: 'Creamy coconut-milk curry perfection' },
-                    { name: 'Fresh Paneer Dishes', desc: 'Homestyle cottage cheese preparations' }
+                    { name: 'പാൽ പായസം', desc: 'ഉത്സവങ്ങളുടെ മധുരം' },
+                    { name: 'തൈര് സദം', desc: 'വീടുകളിലെ ആശ്വാസ ഭക്ഷണം' },
+                    { name: 'മലബാർ പൊറോട്ടയും കുറുമയും', desc: 'തേങ്ങാപ്പാൽ ചേർത്ത കറി' },
+                    { name: 'പനീർ വിഭവങ്ങൾ', desc: 'വീട്ടിലുണ്ടാക്കിയ പനീർ വിഭവങ്ങൾ' }
                   ].map((item, idx) => (
                     <li key={idx} className="flex gap-3 items-start">
                       <span className="text-[var(--saffron)] text-lg mt-1">•</span>
@@ -226,7 +226,7 @@ export default function Home() {
                 </div>
                 <div className="relative z-10 text-center p-8">
                   <div className="text-6xl mb-4">🏺</div>
-                  <p className="font-serif text-2xl text-[var(--royal)] italic">Traditional Brass Vessels</p>
+                  <p className="font-serif text-2xl text-[var(--royal)] italic">പരമ്പരാഗത ഓട്ടുപാത്രങ്ങൾ</p>
                   <p className="text-sm text-[var(--cocoa)] mt-2">പാല ചോമ്പ് • Paala Chombu</p>
                 </div>
               </div>
@@ -234,16 +234,16 @@ export default function Home() {
               {/* Cultural Facts */}
               <div className="bg-[var(--royal)] text-white p-6 shadow-lg relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
-                <h5 className="text-xl font-bold mb-4 relative z-10">Did You Know?</h5>
+                <h5 className="text-xl font-bold mb-4 relative z-10">നിങ്ങൾക്ക് അറിയാമോ?</h5>
                 <div className="space-y-3 relative z-10">
                   <p className="text-sm leading-relaxed opacity-90">
-                    ✦ Kannur's coastal climate creates the perfect conditions for dairy farming, producing naturally rich and creamy milk.
+                    ✦ കണ്ണൂരിന്റെ കാലാവസ്ഥ പാൽ ഉൽപാദനത്തിന് അനുയോജ്യമാണ്, ഇത് സ്വാഭാവികമായും രുചികരമായ പാൽ നൽകുന്നു.
                   </p>
                   <p className="text-sm leading-relaxed opacity-90">
-                    ✦ Traditional Kerala households store milk in brass vessels, believed to enhance its nutritional properties.
+                    ✦ പോഷകഗുണങ്ങൾ വർദ്ധിപ്പിക്കുന്നതിനായി പരമ്പരാഗതമായി ഓട്ടുപാത്രങ്ങളിലാണ് പാൽ സൂക്ഷിക്കുന്നത്.
                   </p>
                   <p className="text-sm leading-relaxed opacity-90">
-                    ✦ The art of making perfect <em>thayir</em> (curd) has been passed down through generations in Kannur families.
+                    ✦ രുചികരമായ തൈര് ഉണ്ടാക്കുന്ന രീതി കണ്ണൂരിലെ കുടുംബങ്ങളിൽ തലമുറകളായി കൈമാറ്റം ചെയ്യപ്പെടുന്നു.
                   </p>
                 </div>
               </div>
@@ -251,9 +251,9 @@ export default function Home() {
               {/* Connection to Prema */}
               <div className="bg-gradient-to-r from-[var(--brick)] to-[var(--saffron)] text-white p-6 shadow-lg">
                 <p className="text-lg font-serif italic leading-relaxed">
-                  "At Prema Dairy, we honor these traditions by delivering the same quality and purity that Kannur families have trusted for generations."
+                  "പ്രേമ ഡയറിയിൽ, കണ്ണൂരിലെ കുടുംബങ്ങൾ തലമുറകളായി വിശ്വസിച്ചുപോരുന്ന അതേ ഗുണനിലവാരവും പരിശുദ്ധിയും ഞങ്ങൾ ഉറപ്പാക്കുന്നു."
                 </p>
-                <p className="text-right text-sm mt-3 opacity-90">— Serving since 2014</p>
+                <p className="text-right text-sm mt-3 opacity-90">— 2014 മുതൽ സേവനസജ്ജം</p>
               </div>
             </div>
 
@@ -263,7 +263,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <div className="inline-flex items-center gap-4 text-[var(--cocoa)] text-sm font-mono">
               <span className="w-12 h-px bg-[var(--border-strong)]"></span>
-              <span className="uppercase tracking-widest">Preserving Heritage, One Bottle at a Time</span>
+              <span className="uppercase tracking-widest">പാരമ്പര്യം കാത്തുസൂക്ഷിക്കുന്നു, ഓരോ തുള്ളിയിലും</span>
               <span className="w-12 h-px bg-[var(--border-strong)]"></span>
             </div>
           </div>
