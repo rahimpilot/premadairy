@@ -147,7 +147,7 @@ export default function Home() {
       {/* Kannur Heritage & Culture Section */}
       <section className="fade-in delay-150 relative">
         <div className="bg-gradient-to-br from-[var(--parchment)] via-[var(--cream)] to-[var(--paper)] p-8 md:p-16 border-2 border-[var(--royal)] relative overflow-hidden shadow-2xl">
-          
+
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
             <svg viewBox="0 0 100 100" className="w-full h-full fill-[var(--royal)]">
@@ -155,7 +155,7 @@ export default function Home() {
               <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="2" />
             </svg>
           </div>
-          
+
           {/* Header */}
           <div className="text-center mb-12 relative z-10">
             <div className="inline-block">
@@ -172,16 +172,16 @@ export default function Home() {
 
           {/* Main Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            
+
             {/* Left: Story */}
             <div className="space-y-6">
               <div className="bg-white/50 p-6 border-l-4 border-[var(--brick)] shadow-md">
-                <h4 className="text-2xl font-serif text-[var(--ink)] mb-4 italic">A Taste of Home</h4>
+                <h4 className="text-2xl font-serif text-[var(--ink)] mb-4 italic">വീടിന്റെ രുചി</h4>
                 <p className="text-[var(--charcoal)] leading-relaxed mb-4">
-                  In Kannur, dairy isn't just food—it's woven into our daily rituals. From the morning <strong className="text-[var(--royal)]">പാൽ ചായ</strong> (milk tea) that awakens the household, to the cooling <strong className="text-[var(--royal)]">സാംബാരം</strong> (spiced buttermilk) that soothes the afternoon heat, milk products are the heartbeat of our cuisine.
+                  കണ്ണൂരിൽ, പാലുൽപ്പന്നങ്ങൾ വെറും ഭക്ഷണമല്ല—അത് നമ്മുടെ ദൈനംദിന ആചാരങ്ങളിൽ ഇഴചേർന്നിരിക്കുന്നു. വീട്ടിലെ എല്ലാവരെയും ഉണർത്തുന്ന രാവിലത്തെ <strong className="text-[var(--royal)]">പാൽ ചായ</strong> മുതൽ, ഉച്ചവെയിലിനെ ശാന്തമാക്കുന്ന തണുത്ത <strong className="text-[var(--royal)]">സാംബാരം</strong> വരെ, പാലുൽപ്പന്നങ്ങൾ നമ്മുടെ പാചകരീതിയുടെ ഹൃദയമാണ്.
                 </p>
                 <p className="text-[var(--charcoal)] leading-relaxed">
-                  Our grandmothers knew the secret: fresh, pure milk makes the difference between ordinary and extraordinary. That same wisdom guides us at Prema Dairy—delivering the authentic taste that reminds you of home.
+                  നമ്മുടെ മുത്തശ്ശിമാർക്ക് രഹസ്യം അറിയാമായിരുന്നു: ശുദ്ധവും പുതുമയുള്ളതുമായ പാൽ സാധാരണത്തിനും അസാധാരണത്തിനും ഇടയിലെ വ്യത്യാസം ഉണ്ടാക്കുന്നു. അതേ ജ്ഞാനമാണ് പ്രേമ ഡയറിയെ നയിക്കുന്നത്—വീടിനെ ഓർമ്മിപ്പിക്കുന്ന ആധികാരിക രുചി എത്തിക്കുന്നു.
                 </p>
               </div>
 
@@ -211,7 +211,7 @@ export default function Home() {
 
             {/* Right: Visual & Facts */}
             <div className="space-y-6">
-              
+
               {/* Decorative Image Placeholder */}
               <div className="relative h-64 w-full border-4 double border-[var(--saffron)] shadow-xl bg-gradient-to-br from-[var(--cream)] to-[var(--parchment)] flex items-center justify-center overflow-hidden group">
                 <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
