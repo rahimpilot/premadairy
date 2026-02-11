@@ -146,12 +146,12 @@ export default function Home() {
             <span className="vintage-badge text-[var(--royal)] border-[var(--royal)]">Kannur's Own</span>
           </div>
 
-          <div className="relative h-48 w-full mb-6 border border-[var(--border)] overflow-hidden rounded-sm grayscale-[0.2] hover:grayscale-0 transition-all duration-700">
+          <div className="relative h-64 w-full mb-6 border border-[var(--border)] overflow-hidden rounded-sm grayscale-[0.1] hover:grayscale-0 transition-all duration-700 group">
             <Image
-              src="/shop-front.png"
-              alt="Prema Dairy Shop Front"
+              src="/kerala-shopkeeper.png"
+              alt="Traditional Kannur Dairy Shopkeeper"
               fill
-              className="object-cover"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
           </div>
 
