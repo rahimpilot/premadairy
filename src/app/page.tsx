@@ -32,38 +32,69 @@ export default function Home() {
   return (
     <div className="max-w-5xl mx-auto space-y-16">
 
-      {/* Hero Section */}
-      <section className="text-center space-y-12 py-16 md:py-24 fade-in px-4">
+      {/* Hero Section - Split Layout with Creative Image */}
+      <section className="grid md:grid-cols-2 gap-8 items-center py-12 md:py-20 fade-in px-4">
 
-        {/* Top Decorative Line */}
-        <div className="flex items-center justify-center gap-4 max-w-sm mx-auto">
-          <span className="h-px bg-[var(--border-strong)] flex-grow opacity-60"></span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">Bellard Road • Kannur</span>
-          <span className="h-px bg-[var(--border-strong)] flex-grow opacity-60"></span>
+        {/* Left: Text Content */}
+        <div className="space-y-8 text-center md:text-left z-10">
+          {/* Top Decorative Line */}
+          <div className="flex items-center justify-center md:justify-start gap-4 max-w-sm mx-auto md:mx-0">
+            <span className="h-px bg-[var(--border-strong)] w-12 opacity-60"></span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--ink)]">Bellard Road • Kannur</span>
+            <span className="h-px bg-[var(--border-strong)] w-12 opacity-60 md:hidden"></span>
+          </div>
+
+          {/* Main Headline */}
+          <div className="space-y-2">
+            <h2 className="text-6xl md:text-7xl lg:text-8xl font-serif text-[var(--royal)] italic leading-[0.9] drop-shadow-sm">
+              Pure. Simple.
+            </h2>
+            <h2 className="text-7xl md:text-8xl lg:text-9xl font-serif text-[var(--brick)] italic leading-[0.9] drop-shadow-sm ml-0 md:ml-12">
+              Honest.
+            </h2>
+          </div>
+
+          {/* Subtext */}
+          <p className="text-xl max-w-md mx-auto md:mx-0 text-[var(--charcoal)] font-sans leading-relaxed opacity-80 pt-4 border-l-4 border-[var(--saffron)] pl-6">
+            Serving the neighborhood from Railway Station Road since 2014.
+            <br />
+            <span className="text-[var(--royal)] font-bold mt-2 block">+91 96053 10945</span>
+          </p>
+
+          {/* Button */}
+          <div className="pt-4 pb-8">
+            <Link href="/contact" className="inline-block bg-[var(--brick)] text-[var(--cream)] text-sm tracking-[0.2em] font-mono uppercase px-12 py-4 shadow-[4px_4px_0_var(--ink)] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--ink)] transition-all border border-[var(--ink)]">
+              Call for Delivery
+            </Link>
+          </div>
         </div>
 
-        {/* Main Headline */}
-        <div className="space-y-4">
-          <h2 className="text-6xl md:text-8xl font-serif text-[var(--royal)] italic leading-none drop-shadow-sm">
-            Pure. Simple.
-          </h2>
-          <h2 className="text-7xl md:text-9xl font-serif text-[var(--brick)] italic leading-none drop-shadow-sm">
-            Honest.
-          </h2>
-        </div>
+        {/* Right: Creative Image Display */}
+        <div className="relative h-[400px] md:h-[500px] w-full mt-8 md:mt-0">
+          {/* Background Decorative Frame */}
+          <div className="absolute top-4 right-4 bottom-4 left-4 border-2 border-[var(--royal)] opacity-30 z-0 transform rotate-3"></div>
+          <div className="absolute top-0 right-8 bottom-8 left-0 bg-[var(--saffron)] opacity-10 z-0 transform -rotate-2 rounded-full blur-xl"></div>
 
-        {/* Subtext */}
-        <p className="text-xl max-w-xl mx-auto text-[var(--charcoal)] font-sans leading-relaxed opacity-80 pt-4">
-          Serving the neighborhood from Railway Station Road since 2014.
-          <br />
-          <span className="text-[var(--royal)] font-bold mt-2 block">+91 96053 10945</span>
-        </p>
+          {/* Main Image Container */}
+          <div className="relative h-full w-full z-10 transform hover:scale-[1.02] transition-transform duration-700 ease-out">
+            <div className="absolute inset-0 border-8 border-white shadow-2xl overflow-hidden rounded-t-[100px] rounded-b-[20px]">
+              <Image
+                src="/hero-pour.png"
+                alt="Pouring fresh milk from traditional brass vessel"
+                fill
+                className="object-cover hover:scale-110 transition-transform duration-[2s]"
+                priority
+              />
+              {/* Overlay Gradient for Text Contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+            </div>
 
-        {/* Button */}
-        <div className="pt-8 pb-8">
-          <Link href="/contact" className="inline-block bg-[var(--brick)] text-[var(--cream)] text-sm tracking-[0.2em] font-mono uppercase px-12 py-4 shadow-[4px_4px_0_var(--ink)] hover:translate-y-[2px] hover:shadow-[2px_2px_0_var(--ink)] transition-all border border-[var(--ink)]">
-            Call for Delivery
-          </Link>
+            {/* Floating Badge */}
+            <div className="absolute -bottom-6 -left-6 bg-[var(--paper)] p-4 border-2 border-[var(--royal)] shadow-[4px_4px_0_var(--royal)] rounded-full w-32 h-32 flex flex-col items-center justify-center text-center rotate-12 hover:rotate-0 transition-transform duration-300">
+              <span className="text-[var(--brick)] font-bold text-3xl font-serif leading-none">100%</span>
+              <span className="text-[var(--ink)] text-[10px] uppercase tracking-widest mt-1">Natural</span>
+            </div>
+          </div>
         </div>
 
       </section>
