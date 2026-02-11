@@ -142,6 +142,137 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="separator-dots opacity-40"></div>
+
+      {/* Kannur Heritage & Culture Section */}
+      <section className="fade-in delay-150 relative">
+        <div className="bg-gradient-to-br from-[var(--parchment)] via-[var(--cream)] to-[var(--paper)] p-8 md:p-16 border-2 border-[var(--royal)] relative overflow-hidden shadow-2xl">
+          
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+            <svg viewBox="0 0 100 100" className="w-full h-full fill-[var(--royal)]">
+              <circle cx="50" cy="50" r="40" />
+              <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          </div>
+          
+          {/* Header */}
+          <div className="text-center mb-12 relative z-10">
+            <div className="inline-block">
+              <span className="vintage-badge text-[var(--saffron)] border-[var(--saffron)] text-xs mb-4">Heritage & Tradition</span>
+              <h3 className="vintage-title text-4xl md:text-5xl text-[var(--royal)] mt-4 mb-3">
+                കണ്ണൂരിന്റെ പാൽ പാരമ്പര്യം
+              </h3>
+              <p className="text-sm font-mono uppercase tracking-[0.3em] text-[var(--brick)] opacity-80">
+                Kannur's Dairy Legacy
+              </p>
+            </div>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--saffron)] to-transparent mx-auto mt-6 opacity-60"></div>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            
+            {/* Left: Story */}
+            <div className="space-y-6">
+              <div className="bg-white/50 p-6 border-l-4 border-[var(--brick)] shadow-md">
+                <h4 className="text-2xl font-serif text-[var(--ink)] mb-4 italic">A Taste of Home</h4>
+                <p className="text-[var(--charcoal)] leading-relaxed mb-4">
+                  In Kannur, dairy isn't just food—it's woven into our daily rituals. From the morning <strong className="text-[var(--royal)]">പാൽ ചായ</strong> (milk tea) that awakens the household, to the cooling <strong className="text-[var(--royal)]">സാംബാരം</strong> (spiced buttermilk) that soothes the afternoon heat, milk products are the heartbeat of our cuisine.
+                </p>
+                <p className="text-[var(--charcoal)] leading-relaxed">
+                  Our grandmothers knew the secret: fresh, pure milk makes the difference between ordinary and extraordinary. That same wisdom guides us at Prema Dairy—delivering the authentic taste that reminds you of home.
+                </p>
+              </div>
+
+              {/* Traditional Uses */}
+              <div className="bg-[var(--paper)] p-6 border border-[var(--border)] shadow-sm">
+                <h5 className="text-lg font-bold text-[var(--brick)] mb-4 flex items-center gap-2">
+                  <span className="text-2xl">🥛</span> Traditional Kannur Delicacies
+                </h5>
+                <ul className="space-y-3">
+                  {[
+                    { name: 'Paal Payasam', desc: 'Festival sweetness in every spoonful' },
+                    { name: 'Curd Rice', desc: 'The comfort meal of Kerala homes' },
+                    { name: 'Malabar Parotta & Kurma', desc: 'Creamy coconut-milk curry perfection' },
+                    { name: 'Fresh Paneer Dishes', desc: 'Homestyle cottage cheese preparations' }
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex gap-3 items-start">
+                      <span className="text-[var(--saffron)] text-lg mt-1">•</span>
+                      <div>
+                        <strong className="text-[var(--ink)]">{item.name}</strong>
+                        <p className="text-sm text-[var(--cocoa)] italic">{item.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Right: Visual & Facts */}
+            <div className="space-y-6">
+              
+              {/* Decorative Image Placeholder */}
+              <div className="relative h-64 w-full border-4 double border-[var(--saffron)] shadow-xl bg-gradient-to-br from-[var(--cream)] to-[var(--parchment)] flex items-center justify-center overflow-hidden group">
+                <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
+                  <svg viewBox="0 0 200 200" className="w-full h-full">
+                    <defs>
+                      <pattern id="heritage-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <circle cx="20" cy="20" r="2" fill="var(--royal)" />
+                      </pattern>
+                    </defs>
+                    <rect width="200" height="200" fill="url(#heritage-pattern)" />
+                  </svg>
+                </div>
+                <div className="relative z-10 text-center p-8">
+                  <div className="text-6xl mb-4">🏺</div>
+                  <p className="font-serif text-2xl text-[var(--royal)] italic">Traditional Brass Vessels</p>
+                  <p className="text-sm text-[var(--cocoa)] mt-2">പാല ചോമ്പ് • Paala Chombu</p>
+                </div>
+              </div>
+
+              {/* Cultural Facts */}
+              <div className="bg-[var(--royal)] text-white p-6 shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+                <h5 className="text-xl font-bold mb-4 relative z-10">Did You Know?</h5>
+                <div className="space-y-3 relative z-10">
+                  <p className="text-sm leading-relaxed opacity-90">
+                    ✦ Kannur's coastal climate creates the perfect conditions for dairy farming, producing naturally rich and creamy milk.
+                  </p>
+                  <p className="text-sm leading-relaxed opacity-90">
+                    ✦ Traditional Kerala households store milk in brass vessels, believed to enhance its nutritional properties.
+                  </p>
+                  <p className="text-sm leading-relaxed opacity-90">
+                    ✦ The art of making perfect <em>thayir</em> (curd) has been passed down through generations in Kannur families.
+                  </p>
+                </div>
+              </div>
+
+              {/* Connection to Prema */}
+              <div className="bg-gradient-to-r from-[var(--brick)] to-[var(--saffron)] text-white p-6 shadow-lg">
+                <p className="text-lg font-serif italic leading-relaxed">
+                  "At Prema Dairy, we honor these traditions by delivering the same quality and purity that Kannur families have trusted for generations."
+                </p>
+                <p className="text-right text-sm mt-3 opacity-90">— Serving since 2014</p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Bottom Accent */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-4 text-[var(--cocoa)] text-sm font-mono">
+              <span className="w-12 h-px bg-[var(--border-strong)]"></span>
+              <span className="uppercase tracking-widest">Preserving Heritage, One Bottle at a Time</span>
+              <span className="w-12 h-px bg-[var(--border-strong)]"></span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <div className="separator-dots opacity-40"></div>
+
       {/* Story Section */}
       <section className="bg-[var(--parchment)] p-8 md:p-12 border border-[var(--border)] fade-in delay-200 relative overflow-hidden">
         {/* Decorative corner */}
