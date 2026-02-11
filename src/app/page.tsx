@@ -2,32 +2,21 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
-interface Review {
-  text: string;
-  rating: string;
-}
 
 export default function Home() {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchReviews();
-  }, []);
-
-  const fetchReviews = async () => {
-    try {
-      const response = await fetch('/api/reviews');
-      const data = await response.json();
-      setReviews(data);
-    } catch (error) {
-      console.error('Failed to fetch reviews:', error);
-    } finally {
-      setLoading(false);
+  const googleReviews = [
+    {
+      name: "Kath Vin",
+      role: "Local Guide",
+      text: "One of the best dairy shop in kannur. Can get superb Lassi, butter milk. Ghee and other milk products are available. Famous for its Lassi since ages. Located opposite kannur railway station."
+    },
+    {
+      name: "Raish Rafeek",
+      role: "Local Guide",
+      text: "It Located opposite kannur railway station. One of the best diary shop in kannur. superb butter milk, Lassi, Ghee and other milk products are available."
     }
-  };
+  ];
 
   return (
     <div className="max-w-5xl mx-auto space-y-16">
@@ -351,36 +340,65 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {loading ? (
-            <p className="text-center col-span-3 text-[var(--cocoa)] italic">Consulting the archives...</p>
-          ) : reviews.length > 0 ? (
-            reviews.slice(0, 3).map((review, index) => (
-              <div key={index} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--royal)] shadow-sm">
-                <div className="text-[var(--saffron)] text-xl mb-3">{'★'.repeat(parseInt(review.rating) || 5)}</div>
-                <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">&quot;{review.text}&quot;</p>
-                <div className="mt-4 text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
-                  — Customer
+          {googleReviews.map((review, index) => (
+            <div key={index} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--royal)] shadow-sm flex flex-col h-full relative group hover:-translate-y-1 transition-transform duration-300">
+              {/* Google Logo/Icon decoration */}
+              <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.545,10.539v3.056h4.845c-0.23,1.385-1.547,3.972-4.845,3.972c-2.909,0-5.263-2.383-5.263-5.292 s2.354-5.292,5.263-5.292c1.3,0,2.379,0.508,3.15,1.189l2.259-2.259C16.489,4.483,14.675,3.694,12.545,3.694 C7.95,3.694,4.212,7.432,4.212,12.027s3.738,8.333,8.333,8.333c4.808,0,8.006-3.383,8.006-8.15c0-0.708-0.076-1.222-0.158-1.671 H12.545z" />
+                </svg>
+              </div>
+
+              <div className="flex items-center gap-2 mb-3">
+                <div className="text-[var(--saffron)] text-lg">★★★★★</div>
+                <span className="text-xs font-mono text-[var(--cocoa)] opacity-60">Google Review</span>
+              </div>
+
+              <p className="text-[var(--ink)] font-serif text-lg leading-snug italic flex-grow">
+                &quot;{review.text}&quot;
+              </p>
+
+              <div className="mt-6 pt-4 border-t border-[var(--border)]">
+                <div className="font-bold text-[var(--brick)] text-sm">{review.name}</div>
+                <div className="text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
+                  {review.role}
                 </div>
               </div>
-            ))
-          ) : (
-            // Fallback Static Reviews if API fails or is empty for demo
-            <>
-              {[
-                "Best milk in Kannur. Thick and pure.",
-                "Have been buying from here since they started. Very reliable.",
-                "Good quality curd and excellent service."
-              ].map((text, i) => (
-                <div key={i} className="bg-[var(--paper)] p-6 border-l-4 border-[var(--royal)] shadow-sm">
-                  <div className="text-[var(--saffron)] text-xl mb-3">★★★★★</div>
-                  <p className="text-[var(--ink)] font-serif text-lg leading-snug italic">&quot;{text}&quot;</p>
-                  <div className="mt-4 text-xs font-mono uppercase text-[var(--border-strong)] tracking-wider">
-                    — Kannur Resident
-                  </div>
-                </div>
-              ))}
-            </>
-          )}
+            </div>
+          ))}
+
+          {/* Detailed Rating Summary Card */}
+          <div className="bg-[var(--royal)] text-[var(--cream)] p-6 shadow-md flex flex-col justify-center items-center text-center relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <svg width="100%" height="100%" viewBox="0 0 100 100">
+                <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                  <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid)" />
+              </svg>
+            </div>
+
+            <div className="relative z-10 space-y-2">
+              <div className="text-6xl font-serif">4.7</div>
+              <div className="flex justify-center gap-1 text-[var(--saffron)] text-2xl">
+                ★★★★★
+              </div>
+              <p className="font-mono uppercase tracking-widest text-sm opacity-80 mt-2">
+                Excellent
+              </p>
+              <p className="text-sm opacity-70">
+                Based on 21 Google Reviews
+              </p>
+              <a
+                href="https://www.google.com/maps/place/Prema+Dairy/@11.8718915,75.3678739,17z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-xs border border-[var(--saffron)] text-[var(--saffron)] px-4 py-2 hover:bg-[var(--saffron)] hover:text-[var(--royal)] transition-colors uppercase tracking-wider"
+              >
+                Read All Reviews
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
