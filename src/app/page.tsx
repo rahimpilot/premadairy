@@ -232,22 +232,17 @@ export default function Home() {
             {/* Right: Visual & Facts */}
             <div className="space-y-6">
 
-              {/* Decorative Image Placeholder */}
+              {/* Decorative Image Placeholder - Thiruvathirakali */}
               <div className="relative h-64 w-full border-4 double border-[var(--saffron)] shadow-xl bg-gradient-to-br from-[var(--cream)] to-[var(--parchment)] flex items-center justify-center overflow-hidden group">
-                <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity">
-                  <svg viewBox="0 0 200 200" className="w-full h-full">
-                    <defs>
-                      <pattern id="heritage-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                        <circle cx="20" cy="20" r="2" fill="var(--royal)" />
-                      </pattern>
-                    </defs>
-                    <rect width="200" height="200" fill="url(#heritage-pattern)" />
-                  </svg>
-                </div>
-                <div className="relative z-10 text-center p-8">
-                  <div className="text-6xl mb-4">🏺</div>
-                  <p className="font-serif text-2xl text-[var(--royal)] italic">പരമ്പരാഗത ഓട്ടുപാത്രങ്ങൾ</p>
-                  <p className="text-sm text-[var(--cocoa)] mt-2">പാല ചോമ്പ് • Paala Chombu</p>
+                <Image
+                  src="/thiruvathira.png"
+                  alt="Thiruvathirakali Dance Performance"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 sepia-[0.2]"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-center z-10 transition-opacity opacity-100">
+                  <p className="font-serif text-xl text-[var(--cream)] italic drop-shadow-md">തിരുവാതിരക്കളി</p>
+                  <p className="text-xs text-[var(--cream)] uppercase tracking-widest mt-1 opacity-90">Celebrating Tradition</p>
                 </div>
               </div>
 
